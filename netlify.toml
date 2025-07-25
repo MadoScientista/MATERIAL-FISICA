@@ -1,0 +1,20 @@
+# netlify.toml
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirecciones para SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Rate limiting para la función serverless (requiere plan pagado)
+# [[edge_functions]]
+#   function = "rate-limit"
+#   path = "/.netlify/functions/*"
