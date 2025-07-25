@@ -1,6 +1,6 @@
 // netlify/functions/sheets.js
 
-const fetch = require("node-fetch"); // Para Node.js versions que no incluyen fetch nativo
+import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
   // Solo permitir GET requests
