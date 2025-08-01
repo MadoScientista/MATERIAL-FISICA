@@ -9,9 +9,7 @@ function FilterBar({ onResults }) {
   const [isLoadingOptions, setIsLoadingOptions] = useState(true);
 
   // Estado para el formulario - se inicializa dinámicamente
-  const [formData, setFormData] = useState({
-    keywords: "",
-  });
+  const [formData, setFormData] = useState({keywords: "",});
 
   // Estados para loading y errores
   const [isLoading, setIsLoading] = useState(false);
@@ -95,6 +93,10 @@ function FilterBar({ onResults }) {
         <p className="mt-2 text-muted">Cargando filtros...</p>
       </div>
     );
+  }
+
+  const handleClearFilter = () => {
+    setFormData({keywords: "",})
   }
 
   return (
@@ -181,20 +183,17 @@ function FilterBar({ onResults }) {
               )}
             </Button>
           </Col>
-
-          {/* Botón para limpiar cache (solo en desarrollo) */}
-          {process.env.NODE_ENV === "development" && (
+          
             <Col xs="auto">
               <Button
                 variant="outline-secondary"
                 size="sm"
-                onClick={loadFilterOptions}
+                onClick={handleClearFilter}
                 //title="Limpiar cache y recargar filtros"
               >
                 🗑️
               </Button>
             </Col>
-          )}
         </Row>
       </Form>
     </>

@@ -171,7 +171,7 @@ function ResultsList({ results }) {
       <Table hover className="results-table">
         <thead>
           <tr>
-            <th style={{ width: "35%" }}>Título</th>
+            <th style={{ width: "25%" }}>Título</th>
             <th style={{ width: "30%" }}>Descripción</th>
             <th style={{ width: "10%" }}>Fecha</th>
             <th style={{ width: "10%" }}>Acción</th>
@@ -204,9 +204,7 @@ function ResultsList({ results }) {
               </td>
 
               <td>
-                {material.fechasubida && (
-                  <small className="text-muted">24/7/2025</small>
-                )}
+                {material.fechasubida}
               </td>
               <td>
                 {material.urldrive ? (
@@ -337,7 +335,7 @@ function ResultsList({ results }) {
                 {material.fechasubida && (
                   <div className="date-text">
                     📅{" "}
-                    {new Date(material.fechasubida).toLocaleDateString("es-ES")}
+                    {material.fechasubida}
                   </div>
                 )}
               </div>
