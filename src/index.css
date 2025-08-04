@@ -41,6 +41,34 @@
    MODO OSCURO
    ======================================== */
 
+/* Mixin para variables de modo oscuro */
+
+/* Aplicar variables de modo oscuro tanto para preferencia del sistema como para clase manual */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Colores de fondo para modo oscuro */
+    --bg-primary: #1e293b;
+    --bg-secondary: #334155;
+    --bg-tertiary: #475569;
+
+    /* Colores de texto para modo oscuro */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    /* Ajustar bordes para modo oscuro */
+    --border-color: #475569;
+
+    /* Sombras ajustadas para modo oscuro */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4),
+      0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+      0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+      0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+}
 
 /* Clase para forzar modo oscuro */
 .dark-mode {
@@ -67,7 +95,17 @@
     0 10px 10px -5px rgba(0, 0, 0, 0.3);
 }
 
-
+/* Fondo oscuro para ambos casos */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #1e293b 50%,
+      #334155 100%
+    ) !important;
+  }
+}
 
 .dark-mode body {
   background: linear-gradient(
